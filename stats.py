@@ -9,3 +9,15 @@ def count_chars(text):
         count = statistics.get(char.lower(), 0)
         statistics[char.lower()] = count + 1
     return statistics
+
+
+def sort_on(dictionary):
+    return dictionary["num"]
+
+
+def generate_sorted_list(stats):
+    result = []
+    for key, value in stats.items():
+        result.append({"char": key, "num": value})
+    result.sort(reverse=True, key=sort_on)
+    return result
